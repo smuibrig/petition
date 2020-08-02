@@ -1,0 +1,28 @@
+<main>
+    <div id="top" class="top">
+        <p class="text">Thanks for your updating your profile {{userData.first}}! <br>Have a look at the data you
+            submitted</p>
+    </div>
+    <div id="container">
+        <img id="logo" src="/bike.last.jpg" class="welcome-img">
+        {{>error}}
+        <form method="POST" action="/profile/edit">
+            <div class="profile-thanks">
+                {{#with userData}}
+                <p>{{first}} {{last}}</p>
+                <p>{{email}}</p>
+                <p>{{age}}</p>
+                <p>{{city}}</p>
+                <p>{{url}}</p>
+
+                {{/with}}
+                <input type="hidden" name="_csrf" value="{{csrfToken}}">
+            </div>
+        </form>
+</main>
+<footer>
+    © 2020 smuibrig
+    <a class="links" href="/signers">Check out our community</a>
+    <a class="links" href="/profile/edit">Update your profile</a>
+    <a class="links" href="/logout">Logout</a>
+</footer>

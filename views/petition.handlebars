@@ -1,0 +1,26 @@
+<main>
+<div id="top" class="top">
+    <p class="text">The time is now!</p>
+</div>
+
+<div id="container">
+    <img id="logo" src="/jump.bike.jpg" class="welcome-img">
+    {{>error}}
+    <form method="POST" action="/petition">
+        <div id="container">
+            <canvas id="canvas" width="300px" height="80px"></canvas>
+            <p><em>Please sign here</em></p>
+            <input type="hidden" name="signature" id="signature">
+            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+            <button>Submit</button>
+        </div>
+    </form>
+</div>
+</main>
+<footer id="spread">
+    © 2020 smuibrig
+    <a class="links" href="/logout">Logout</a>
+</footer>
+
+<script src="/script.js"></script>
+

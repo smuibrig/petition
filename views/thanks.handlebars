@@ -1,0 +1,25 @@
+<main>
+    <div id="top" class="top">
+        <p class="text">Thanks for your support.</p>
+    </div>
+    <div id="container">
+        <img id="logo" src="/bike3.jpg" class="welcome-img">
+        <div class="signature-container">
+            <img src="{{signature}}" class="signature" alt="Signature">
+        </div>
+        {{>error}}
+        <form method="POST" action="/signature/delete">
+            <div id="container-registration">
+                <input type="hidden" name="_csrf" value="{{csrfToken}}">
+                <button id="thanks-button">Clear signature</button>
+            </div>
+        </form>
+    </div>
+</main>
+<footer>
+    © 2020 smuibrig
+    <a class="links" href="/signers">Check out our community</a>
+    <a class="links" href="/profile/edit">Update your profile</a>
+    <a class="links" href="/logout">Logout</a>
+</footer>
+

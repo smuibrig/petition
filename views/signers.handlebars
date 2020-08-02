@@ -1,0 +1,37 @@
+<main>
+    <div id="top" class="top">
+        <p class="text">We fight for the comeback of UBER JUMP bikes together.</p>
+        {{#if city}}
+        <p class="text">This is our community in {{city}}</p>
+        {{/if}}
+    </div>
+    <div id="container">
+        {{#if city}}
+        <img id="logo" src="/bikeman.jpg" class="welcome-img">
+        {{else}}
+        <img id="logo" src="/bike.last.last.jpg" class="welcome-img">
+        {{/if}}
+        {{>error}}
+        <div class="signers {{citiesClass}}">
+            {{#each signers}}
+            <li>
+                {{#if url}}
+                <a href="{{this.url}}">{{this.first}} {{this.last}}</a>
+                {{else}}
+                {{this.first}} {{this.last}}
+                {{/if}}
+                {{this.age}}
+                {{#if city}}
+                <a href="/signers/{{this.city}}" class="city">{{this.city}}</a>
+                {{/if}}
+            </li>
+            {{/each}}
+        </div>
+    </div>
+</main>
+<footer>
+    © 2020 smuibrig
+    <a class="links" href="/thanks">Go back</a>
+    <a class="links" href="/profile/edit">Update your profile</a>
+    <a class="links" href="/logout">Logout</a>
+</footer>

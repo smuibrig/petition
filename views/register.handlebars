@@ -1,0 +1,40 @@
+<main>
+<div id="top">
+    <p class="register-text">UBER JUMP bike's thoughtful design and smooth driving experience enriched lifes in cities across the
+        globe.<br>With the rise of COVID 19 they disappeared from our streets.<br>Sign up now and bring them back.</p>
+</div>
+
+<div id="container">
+    <img id="logo" src="/bike2.jpg" class="welcome-img">
+    {{>error}}
+
+    <form method="POST" action="/register">
+        <div id="container-registration">
+            <div id="container" class="margin-right">
+                <input type="text" name="firstName">
+                <p>First Name</p>
+            </div>
+            <div id="container">
+                <input type="text" name="lastName">
+                <p>Last Name</p>
+            </div>
+            <div id="container">
+                <input type="text" name="email">
+                <p>Email address</p>
+            </div>
+            <div id="container">
+                <input type="password" name="password">
+                <p>Password</p>
+            </div>
+
+            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+            <button>Sign up</button>
+        </div>
+    </form>
+</div>
+</main>
+<footer id="spread">
+    © 2020 smuibrig
+     <a class="links" href="/login">Login here</a></div>
+</footer>
+

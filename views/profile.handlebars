@@ -1,0 +1,40 @@
+<main>
+    <div id="top" class="top">
+        <p class="text">Please share some more information about yourself<br>and connect with JUMP bike enthusiasts in
+            your area.</p>
+    </div>
+
+    <div id="container">
+        <img id="logo" src="/citybike2.jpg" class="welcome-img">
+        {{>error}}
+
+        <form method="POST" action="/profile">
+            <div id="container-registration">
+                {{#with userData}}
+                <div id="container" class="margin-right">
+                    <input type="text" name="age" value="{{age}}">
+                    <p>Age</p>
+                </div>
+                <div id="container">
+                    <input type="text" name="city" value="{{city}}">
+                    <p>City</p>
+                </div>
+                <div id="container">
+                    <input type="text" name="url" value="{{url}}">
+                    <p>Website</p>
+                </div>
+                {{/with}}
+                <input type="hidden" name="_csrf" value="{{csrfToken}}">
+                <button>Submit</button>
+            </div>
+
+            <div class="inline">Don't want to submit additional information?<br><a href="/petition">Sign the petition
+                    here.</a></div>
+
+        </form>
+    </div>
+</main>
+<footer>
+    © 2020 smuibrig
+    <a class="links" href="/logout">Logout</a>
+</footer>

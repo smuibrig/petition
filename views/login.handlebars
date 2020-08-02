@@ -1,0 +1,28 @@
+
+<main>
+<div id="top" class="top">
+    <p class="text">Welcome back.</p>
+</div>
+<div id="container">
+    <img id="logo" src="/bike2.jpg" class="welcome-img">
+    {{>error}}
+    <form method="POST" action="/login">
+        <div id="container-registration">
+            <div id="container">
+                <input type="text" name="email">
+                <p>Email address</p>
+            </div>
+            <div id="container">
+                <input type="password" name="password">
+                <p>Password</p>
+            </div>
+            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+            <button>Login</button>
+        </div>
+    </form>
+</div>
+</main>
+<footer id="spread">
+    © 2020 smuibrig
+    <a class="links" href="/register">Register here</a>
+</footer>

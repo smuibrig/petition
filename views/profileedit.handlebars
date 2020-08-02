@@ -1,0 +1,61 @@
+<main>
+<div id="top" class="top">
+    <p class="text">Make it easier for JUMP bike enthusiasts to get in touch with you<br>and edit your information</p>
+</div>
+
+<div id="container">
+    <img id="logo" src="/citybike2.jpg" class="welcome-img">
+
+    {{>error}}
+
+    <form method="POST" action="/profile/edit">
+        <div id="container-registration">
+            {{#with userData}}
+            <div id="container" class="margin-right">
+                <input type="text" name="firstName" value="{{first}}">
+                <p>First name</p>
+            </div>
+            <div id="container" class="margin-right">
+                <input type="text" name="lastName" value="{{last}}">
+                <p>Last name</p>
+            </div>
+            <div id="container" class="margin-right">
+                <input type="text" name="email" value="{{email}}">
+                <p>Email address</p>
+            </div>
+            <div id="container" class="margin-right">
+                <input type="text" name="age" value="{{age}}">
+                <p>Age</p>
+            </div>
+            <div id="container">
+                <input type="text" name="city" value="{{city}}">
+                <p>City</p>
+            </div>
+            <div id="container">
+                <input type="text" name="url" value="{{url}}">
+                <p>Website</p>
+            </div>
+            <div id="container">
+                <input type="password" name="password">
+                <p>Password</p>
+            </div>
+            <button>Update</button>
+            {{/with}}
+            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+        </div>
+    </form>
+    <form method="POST" action="/account/delete">
+        <div id="container-registration">
+            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+            <button id="delete-button">Delete account</button>
+        </div>
+    </form>
+    <p><em>Note: Once you hit the delete account button, all your data will be erased.</em></p>
+</div>
+</main>
+<footer>
+    © 2020 smuibrig
+    <a class="links" href="/signers">Check out our community</a>
+    <a class="links" href="/thanks">Go back</a>
+    <a class="links" href="/logout">Logout</a>
+</footer>
