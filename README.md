@@ -14,10 +14,10 @@ To fork and work with this project follow these steps:
 
 ```
 # Clone the repository
-git clone https://github.com/smuibrig/millennial-terminal
+git clone https://github.com/smuibrig/petition
 
 # Go inside the directory
-cd millennial-terminal
+cd petition
 
 # Install dependencies
 npm install
